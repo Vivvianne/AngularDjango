@@ -1,7 +1,11 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
+from .models import Movie
 
-
+class MovieSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Moviefields = ('id', 'title', 'description', 'year')
+    
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
