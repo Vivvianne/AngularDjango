@@ -4,15 +4,6 @@ from .models import Movie
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Moviefields = ('id', 'title', 'description', 'year')
+        model = Movie
+        fields = ('id', 'title', 'description', 'year')
     
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'groups']
-
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ['url', 'name']
